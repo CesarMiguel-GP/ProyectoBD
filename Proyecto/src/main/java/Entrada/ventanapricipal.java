@@ -32,8 +32,7 @@ public class ventanapricipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        lblAbrir = new javax.swing.JMenuItem();
-        lblProductos = new javax.swing.JMenuItem();
+        lblUsuario = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         lblSalida = new javax.swing.JMenuItem();
 
@@ -47,16 +46,13 @@ public class ventanapricipal extends javax.swing.JFrame {
 
         jMenu1.setText("Archivo");
 
-        lblAbrir.setText("Lista de Usuarios");
-        lblAbrir.addActionListener(new java.awt.event.ActionListener() {
+        lblUsuario.setText("Usuario");
+        lblUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lblAbrirActionPerformed(evt);
+                lblUsuarioActionPerformed(evt);
             }
         });
-        jMenu1.add(lblAbrir);
-
-        lblProductos.setText("Productos");
-        jMenu1.add(lblProductos);
+        jMenu1.add(lblUsuario);
         jMenu1.add(jSeparator1);
 
         lblSalida.setText("Salir");
@@ -78,14 +74,14 @@ public class ventanapricipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(108, 108, 108)
                 .addComponent(jLabel2)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addContainerGap(471, Short.MAX_VALUE))
         );
 
         pack();
@@ -95,9 +91,9 @@ public class ventanapricipal extends javax.swing.JFrame {
        Validador.confirmarSalida(ventanapricipal.this);
     }//GEN-LAST:event_lblSalidaActionPerformed
 
-    private void lblAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblAbrirActionPerformed
+    private void lblUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblUsuarioActionPerformed
         //todavia no he puesto nada aca 
-    }//GEN-LAST:event_lblAbrirActionPerformed
+    }//GEN-LAST:event_lblUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,8 +136,7 @@ public class ventanapricipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JMenuItem lblAbrir;
-    private javax.swing.JMenuItem lblProductos;
     private javax.swing.JMenuItem lblSalida;
+    private javax.swing.JMenuItem lblUsuario;
     // End of variables declaration//GEN-END:variables
 }

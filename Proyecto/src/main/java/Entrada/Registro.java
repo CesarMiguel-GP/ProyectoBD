@@ -427,6 +427,9 @@ public class Registro extends javax.swing.JFrame {
         }
         Usuario UsuarioN = new Usuario(correo, nombre,aPaterno, aMaterno, fechaNacimiento, gen, contrasena);
         Validador.registrarUsuario(UsuarioN);
+        String rutaPDF = "registro_" + UsuarioN.getCorreo().replaceAll("@.*", "") + ".pdf";
+        Validador.enviarPDFPorCorreo(UsuarioN, rutaPDF);
+
         Login lg = new Login();
         lg.setVisible(true);
         dispose();

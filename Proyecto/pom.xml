@@ -24,6 +24,18 @@
             <version>2.7.13</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>geronimo-javamail_1.4_spec</artifactId>
+            <version>1.4.4-2.0.36</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>aero.m-click</groupId>
+            <artifactId>mcpdf</artifactId>
+            <version>0.2.10</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
