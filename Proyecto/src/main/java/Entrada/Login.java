@@ -319,7 +319,36 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_iconSalidaMouseClicked
 
     private void btnRecuperarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRecuperarMouseClicked
-        //Aqui mandaria un mensaje al correo del usuario para recuperar su contraseña, no supe que meter 
+       String correo = txtUsuario.getText().trim();
+        if (correo.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese su correo en el campo de usuario primero.");
+            return;
+        }
+        if (!Validador.validarCorreo(correo, lblError)) return;
+
+        String codigo = Validador.enviarCodigo(correo);
+        if (codigo == null) {
+            JOptionPane.showMessageDialog(this, "No se pudo enviar el código. Verifica el correo.");
+            return;
+        }
+
+        String ingreso = JOptionPane.showInputDialog(this, "Ingresa el código enviado a tu correo:");
+
+        if (ingreso != null && ingreso.equals(codigo)) {
+            String nuevaContra = JOptionPane.showInputDialog(this, "Ingresa tu nueva contraseña:");
+            if (nuevaContra != null && nuevaContra.length() >= 8) {
+                boolean actualizado = Validador.actualizarContrasena(correo, nuevaContra);
+                if (actualizado) {
+                    JOptionPane.showMessageDialog(this, "Contraseña actualizada correctamente.");
+                } else {
+                    JOptionPane.showMessageDialog(this, "Error al actualizar la contraseña.");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "La contraseña debe tener al menos 8 caracteres.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Código incorrecto.");
+        }
     }//GEN-LAST:event_btnRecuperarMouseClicked
 
     /**

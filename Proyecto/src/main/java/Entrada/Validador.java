@@ -1,5 +1,6 @@
 package Entrada;
 
+import com.itextpdf.text.Image;
 import com.toedter.calendar.JCalendar;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
@@ -300,6 +301,54 @@ public class Validador {
 
         } catch (MessagingException | IOException e) {
             e.printStackTrace();
+        }
+    }
+    public static String enviarCodigo(String correoDestino) {
+        String codigo = String.valueOf((int) (Math.random() * 9000 + 1000)); 
+
+        final String remitente = "tucorreo@gmail.com";
+        final String clave = "tu_contraseña_de_app";
+
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+
+        Session session = Session.getInstance(props, new Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(remitente, clave);
+            }
+        });
+
+        try {
+            Message mensaje = new MimeMessage(session);
+            mensaje.setFrom(new InternetAddress(remitente));
+            mensaje.setRecipients(Message.RecipientType.TO, InternetAddress.parse(correoDestino));
+            mensaje.setSubject("Código de recuperación de contraseña");
+            mensaje.setText("Tu código de recuperación es: " + codigo);
+
+            Transport.send(mensaje);
+            return codigo;
+
+        } catch (MessagingException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public static boolean actualizarContrasena(String correo, String nuevaContrasena) {
+        String sql = "UPDATE usuarios SET contrasena = ? WHERE correo = ?";
+
+        try (Connection conn = ConexionMySQL.getConexion();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, nuevaContrasena);
+            stmt.setString(2, correo);
+            return stmt.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
         }
     }
 }
