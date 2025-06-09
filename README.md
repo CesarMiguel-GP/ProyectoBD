@@ -1,6 +1,14 @@
 # ProyectoBD/ Sistema de Gestión - Abarrotes La Soledad 
 
-EQUIPO 8
+## Créditos:
+
+Este proyecto fue desarrollado como parte de un ejercicio académico para la materia de Topicos Avanzados De Programacion, por el equipo 8, integrado por:
+
+- Caballero Silva Dalia Montserrat
+- Crespo Castañon Suyay Fernanda
+- García Pérez César Miguel
+
+
 ## 📋 Descripción
 
 Sistema de gestión integral para la tienda "Abarrotes La Soledad" desarrollado en Java con interfaz gráfica Swing con conexión a base de datos MySQL. Permite la administración completa de productos, usuarios, proveedores y ventas, además de ofrecer una experiencia de compra intuitiva para los clientes.  
@@ -410,10 +418,3 @@ Cargar productos iniciales: Inserta 100 productos predefinidos con las siguiente
 
 ---
 
-## Créditos:
-
-Este proyecto fue desarrollado como parte de un ejercicio académico para la materia de Topicos Avanzados De Programacion, por el equipo 8, integrado por:
-
-- Caballero Silva Dalia Montserrat
-- Crespo Castañon Suyay Fernanda
-- García Pérez César Miguel
