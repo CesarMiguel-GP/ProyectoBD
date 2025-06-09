@@ -198,6 +198,96 @@ Funcionalidad: Sistema completo de registro de usuarios con diferentes roles y e
 - Envío asíncrono de correos electrónicos
 - Limpieza automática de archivos temporales
 - Confirmación de salida del formulario
+--- 
+## 📁 Archivos del Sistema
+### 1. EnvioCorreo.java
+Clase principal para el envío de correos electrónicos con funcionalidades avanzadas.
+#### Funcionalidades:
+
+- Envío de correos con PDFs adjuntos de forma síncrona y asíncrona
+- Envío de tickets de compra por correo electrónico
+- Pool de conexiones SMTP optimizado para mejor rendimiento
+- Manejo de errores robusto con logging detallado
+- Soporte para SSL/TLS con configuración segura
+- Validaciones de destinatarios y archivos antes del envío
+- Contenido HTML personalizado para diferentes tipos de correo
+
+#### Métodos principales:
+```bash
+enviarCorreoConPDF() - Envío síncrono de correos con PDF
+enviarCorreoAsync() - Envío asíncrono para mejor rendimiento
+enviarTicketPorCorreo() - Envío específico de tickets de compra
+shutdown() - Cierre ordenado del pool de hilos
+```
+
+### 2. GeneradorPDF.java
+Generador de documentos PDF de bienvenida para nuevos usuarios.
+#### Funcionalidades:
+
+- Generación de PDFs personalizados para usuarios registrados
+- Diseño profesional con fuentes y colores corporativos
+- Información completa del usuario en formato tabla
+- Mensaje de bienvenida personalizado con beneficios de la tienda
+- Compresión automática para archivos más ligeros
+- Manejo de directorios automático para rutas de salida
+
+#### Contenido del PDF:
+
+- Header con logo y título de la empresa
+- Información personal del usuario (nombre, correo, edad, etc.)
+- Mensaje de bienvenida personalizado
+- Listado de beneficios y servicios
+- Footer corporativo
+
+### 3. GeneradorTicketPDF.java
+Generador de tickets de compra en formato PDF.
+#### Funcionalidades:
+
+- Tickets de compra detallados con información completa de productos
+- Tabla de productos con cantidad, precio y subtotales
+- Cálculo automático de totales con formato de moneda
+- Información de pago y fecha/hora de compra
+- Diseño optimizado para impresión en formato ticket
+- Integración con base de datos para obtener información de productos
+
+#### Contenido del ticket:
+
+- Header con información de la tienda y fecha
+- Datos del cliente (si se proporciona)
+- Tabla detallada de productos comprados
+- Forma de pago utilizada
+- Total de la compra destacado
+- Mensaje de agradecimiento
+- 
+--- 
+## 🔧 Configuración Técnica
+--- 
+### Dependencias Requeridas
+
+- JavaMail API - Para envío de correos electrónicos
+- iText PDF - Para generación de documentos PDF
+- Java 8+ - Con soporte para CompletableFuture
+
+### Configuración SMTP
+
+- Servidor: smtp.gmail.com
+- Puerto: 587 (STARTTLS)
+- Autenticación: Requerida
+- Protocolos SSL: TLSv1.2 y TLSv1.3
+--- 
+## 🚀 Casos de Uso
+--- 
+### Registro de Usuarios
+
+- Se genera un PDF de bienvenida personalizado
+- Se envía por correo electrónico al usuario registrado
+- El PDF incluye información del usuario y beneficios de la tienda
+
+### Procesamiento de Compras
+
+- Se genera un ticket PDF con los detalles de la compra
+- Se envía automáticamente al correo del cliente
+- El ticket incluye productos, precios y total de la compra
 
 --- 
 ## Enlace al video de demostración
