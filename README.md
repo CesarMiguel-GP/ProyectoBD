@@ -3,10 +3,6 @@
 
 Sistema de gestión integral para la tienda "Abarrotes La Soledad" desarrollado en Java con interfaz gráfica Swing con conexión a base de datos MySQL. Permite la administración completa de productos, usuarios, proveedores y ventas, además de ofrecer una experiencia de compra intuitiva para los clientes.  
 
-
-
-Al descargar el proyecto también debes descargar todos los archivos zip de las imágenes, debes de extraer todo y en el proyecto en el paquete de entrada crear un nuevo folder donde vas a colocar todas las imágenes para un correcto funcionamiento del proyecto.
-
 ---
 ## ✨ Características Principales
 ### 🔐 Sistema de Autenticación
@@ -292,6 +288,107 @@ Generador de tickets de compra en formato PDF.
 - Se genera un ticket PDF con los detalles de la compra
 - Se envía automáticamente al correo del cliente
 - El ticket incluye productos, precios y total de la compra
+---
+## Libreria Utilizada/ConexionMySQL - Sistema de Gestión de Abarrotes
+---
+###📦 Conexión MySQL
+Una librería Java que facilita la conexión a una base de datos MySQL, incluyendo funcionalidades para conectarse, crear/eliminar tablas y buscar registros de manera sencilla.
+
+### 🎯 Propósito
+El principal de esta librería es ayudar al usuario a implementar una base de datos, permitiendo una mejor integración con interfaces gráficas y el registro de datos, ya sea en medios locales o remotos.
+link de la libreria original:
+https://github.com/jpelon777/ConexionMySQL---Equipo17 
+### 👤 Autor
+- Jhonatan Iván Poblete Hernández 
+- Omar Konk Pérez Ramírez
+--- 
+## Configuración de Base de Datos
+
+- Base de datos: abarrotes_la_soledad
+- Puerto: 3306
+- Usuario: root
+- Contraseña: 1234
+- URL de conexión: jdbc:mysql://localhost:3306/abarrotes_la_soledad?useSSL=false&serverTimezone=UTC
+
+### Funcionalidades
+- Gestión de Productos
+- Operaciones CRUD
+--- 
+- Crear tabla de productos: Crea automáticamente la tabla productos con campos: id_producto, nombre, precio, stock, id_proveedor, tipo, descripción, url
+- Obtener productos: Recupera la lista completa de productos de la base de datos
+- Insertar producto: Añade nuevos productos al inventario
+- Buscar producto por ID: Localiza un producto específico usando su identificador
+- Buscar producto por nombre: Localiza un producto usando su nombre exacto
+- Eliminar producto: Remueve un producto del inventario
+
+### Gestión de Inventario
+
+- Verificar stock: Comprueba si hay suficiente stock para una cantidad solicitada
+- Descontar stock: Reduce el stock después de una venta
+- Actualizar stock: Modifica la cantidad disponible de un producto
+- Obtener stock: Consulta la cantidad disponible de un producto específico
+
+### Datos Iniciales
+
+Cargar productos iniciales: Inserta 100 productos predefinidos con las siguientes categorías:
+
+- Abarrotes Básicos
+- Pan y Galletas
+- Bebés y Maternidad
+- Dulcería y Snacks
+- Limpieza e Higiene
+- Productos Perecederos
+-Mascotas
+- Bebidas
+- Otros/Farmacia básica
+---
+## Gestión de Usuarios
+### Operaciones de Usuario
+
+- Crear tabla de usuarios: Establece la estructura para almacenar usuarios del sistema
+- Insertar usuario: Registra nuevos usuarios con nombre, usuario, contraseña y rol
+- Validar usuario: Autentica credenciales de acceso al sistema
+- Insertar administrador: Registra usuarios con permisos administrativos
+- Insertar cliente: Registra usuarios clientes con datos completos (nombre, apellidos, fecha de nacimiento, género)
+
+### Gestión de Proveedores
+
+- Insertar proveedor: Registra nuevos proveedores con ID y nombre
+
+### Gestión de Ventas
+
+- Registrar detalle de venta: Almacena los detalles de cada producto vendido incluyendo cantidad, precio unitario e importe total
+--- 
+### Utilidades de Base de Datos
+
+- Buscar tabla completa: Muestra todos los registros de una tabla específica
+- Buscar registro específico: Localiza registros por columna y valor específicos
+---
+### Categorías de Productos Disponibles
+
+- Abarrotes Básicos - Productos fundamentales como arroz, azúcar, aceite
+- Pan y Galletas - Productos de panadería y galletas
+- Bebés y Maternidad - Productos para el cuidado infantil
+- Dulcería y Snacks - Golosinas y botanas
+- Limpieza e Higiene - Productos de aseo personal y del hogar
+- Productos Perecederos - Lácteos, carnes y productos frescos
+- Mascotas - Alimento y accesorios para animales
+- Bebidas - Refrescos, jugos y bebidas diversas
+- Otros/Farmacia básica - Medicamentos básicos y productos de salud
+
+### Características Técnicas
+
+- Manejo automático de conexiones con try-with-resources
+- Prepared statements para prevenir inyección SQL
+- Manejo de excepciones con logging de errores
+- Transacciones automáticas para operaciones de venta
+- Validación de stock antes de realizar ventas
+
+### Notas de Seguridad
+
+- Las contraseñas se almacenan en texto plano (recomendable implementar hash)
+- Validación básica de usuarios sin roles diferenciados
+- Conexión directa sin pool de conexiones
 
 --- 
 ## Enlace al video de demostración
