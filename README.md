@@ -10,6 +10,7 @@
 - Java 8 o superior.
 - IDE como NetBeans 25, IntelliJ o Eclipse.
 - Se requiere conexión a internet, librerías externas e base de datos.
+- Conexión a base de datos MySQL, y su respectivo archivo en el proyecto
 
 ---
 
