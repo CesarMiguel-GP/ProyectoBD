@@ -3,6 +3,10 @@
 
 Sistema de gestión integral para la tienda "Abarrotes La Soledad" desarrollado en Java con interfaz gráfica Swing con conexión a base de datos MySQL. Permite la administración completa de productos, usuarios, proveedores y ventas, además de ofrecer una experiencia de compra intuitiva para los clientes.  
 
+
+
+Al descargar el proyecto también debes descargar todos los archivos zip de las imágenes, debes de extraer todo y en el proyecto en el paquete de entrada crear un nuevo folder donde vas a colocar todas las imágenes para un correcto funcionamiento del proyecto.
+
 ---
 ## ✨ Características Principales
 ### 🔐 Sistema de Autenticación
